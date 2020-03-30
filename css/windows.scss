@@ -1,0 +1,824 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+}
+
+// 字體顏色
+h2,
+p {
+  color: white;
+}
+
+p {
+  margin-bottom: 10%;
+}
+
+// 這個還要再設條件
+// a {
+//   color: black;
+// }
+
+.font100 {
+  font-size: 100px;
+}
+
+
+.colorblack {
+  color: black;
+}
+
+//   導覽列
+.mar_left {
+  margin-left: 10%;
+}
+
+.display {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+// 導覽列參考同學
+
+.fontWeight600 {
+  // 數字越大字體越厚
+  font-weight: 600;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+}
+
+button {
+  border: unset;
+  &:focus {
+    outline: unset;
+  }
+}
+
+// 變化的秒數
+.tranStyle {
+  transition: all 200ms linear 0ms;
+}
+
+.navBar {
+  width: 1536px;
+  margin: 0 auto;
+  .logo {
+    width: 190px;
+    height: 48px;
+    .logoContainer {
+      width: 16px;
+      height: 16px;
+      .logoBox {
+        width: 7px;
+        height: 7px;
+        background-color: white;
+      }
+      &:hover {
+        .logoRed {
+          background-color: rgb(242, 80, 34);
+        }
+        .logoGreen {
+          background-color: rgb(127, 186, 0);
+        }
+        .logoBlue {
+          background-color: rgb(0, 164, 239);
+        }
+        .logoOrange {
+          background-color: rgb(255, 185, 0);
+        }
+      }
+    }
+
+    // 超過1024px logo width變成60px
+    @media (max-width: 1024px) {
+      width: 60px;
+    }
+  }
+
+  .siteTitle {
+    line-height: 48px;
+    a:hover {
+      color: rgb(0, 120, 212);
+    }
+  }
+
+  .systemType {
+    // 元素会根据自身的宽度与高度来确定尺寸
+    flex: 1 1 auto;
+    padding: 0 120px 0 420px;
+    ul {
+      padding: 0;
+    }
+    li {
+      font-weight: 600;
+      line-height: 48px;
+      display: inline-block;
+      &:hover {
+        a.Web {
+          color: rgb(37, 142, 222);
+        }
+        a.Windows {
+          color: rgb(79, 229, 255);
+        }
+        a.iOS {
+          color: rgb(207, 143, 255);
+        }
+        a.Android {
+          color: rgb(105, 229, 110);
+        }
+      }
+    }
+    @media (max-width: 1460px) {
+      padding: 0 60px 0 120px;
+    }
+    @media (max-width: 1024px) {
+      padding: 0 0 0 120px;
+    }
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+  .menuToggle {
+    width: 48px;
+    height: 48px;
+    display: none;
+    background-color: black;
+    margin-left: auto;
+    .barBox {
+      width: 24px;
+      height: 16px;
+      display: flex;
+      span {
+        width: 24px;
+        height: 2px;
+        background-color: rgb(255, 255, 255);
+      }
+    }
+    @media (max-width: 767px) {
+      display: flex;
+    }
+  }
+  @media (max-width: 1680px) {
+    width: 1336px;
+  }
+  @media (max-width: 1460px) {
+    width: 1136px;
+  }
+  @media (max-width: 1280px) {
+    width: 960px;
+  }
+  @media (max-width: 1024px) {
+    width: 100%;
+    padding: 0 30px;
+  }
+  @media (max-width: 767px) {
+    padding: 0 10px 0 30px;
+  }
+}
+
+/* 內容一 */
+.content1 {
+  width: 80%;
+  margin: auto;
+  background-color: black;
+  display: flex;
+
+  .content1_left {
+    width: 50%;
+
+    @media (max-width: 676px) {
+      width: 100%;
+    }
+  }
+
+  .font {
+    font-size: 50px;
+  }
+
+  .font_color {
+    color: white;
+  }
+
+  .content1_right {
+    width: 50%;
+
+    @media (max-width: 676px) {
+      display: none;
+    }
+  }
+}
+
+/* 內容二 */
+.content2 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 50vw;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    background-color: rgb(14, 112, 187);
+  }
+
+  //   後面的背景顏色
+  &::after {
+    content: "";
+    width: 50vw;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 1;
+    background-color: rgb(36, 195, 41);
+  }
+
+  .content2_content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+
+    @media (max-width: 1014px) {
+      width: 100%;
+    }
+
+    .web-1 {
+      background-color: rgb(34, 128, 200);
+      text-align: center;
+      padding-top: 15px;
+      z-index: 2; // 讓他浮上來
+    }
+
+    .web-2 {
+      background-color: rgb(79, 229, 255);
+      text-align: center;
+      padding-top: 15px;
+      z-index: 2; // 讓他浮上來
+    }
+
+    .web-3 {
+      background-color: rgb(207, 143, 255);
+      text-align: center;
+      padding-top: 15px;
+      z-index: 2; // 讓他浮上來
+    }
+
+    .web-4 {
+      background-color: rgb(95, 207, 99);
+      text-align: center;
+      padding-top: 15px;
+      z-index: 2; // 讓他浮上來
+    }
+
+    .mar-auto {
+      margin: auto;
+    }
+  }
+}
+
+/* 內容三 */
+.content3 {
+  width: 100%;
+  background-image: url("https://www.microsoft.com/design/fluent/assets/images/msft-verge-fluent.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  .text_content {
+    width: 80%;
+    margin: auto;
+
+    @media (max-width: 625px) {
+      .font100 {
+        font-size: 80px;
+      }
+    }
+  }
+
+  // 中間正方形圖片
+  .img_position {
+    position: absolute;
+    right: 20vw;
+    top: -10vh;
+    z-index: 2;
+    // 讓正方形圖片浮在父層上
+    @media (max-width: 695px) {
+      display: none;
+    }
+  }
+}
+
+/* 內容4 */
+.content4 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  .content4img {
+    padding: 3% 20%;
+    padding-bottom: 5%;
+    width: 100%;
+    margin: auto;
+  }
+
+  .fontposition {
+    width: 100%;
+    padding-left: 50%;
+    @media (max-width: 695px) {
+      padding-left: 5%;
+      padding-right: 30%;
+    }
+  }
+}
+
+/* 內容5 */
+.content5 {
+  width: 100%;
+  background-image: url("https://www.microsoft.com/design/fluent/assets/images/terraforma@1x.png");
+  background-size: cover;
+  background-position: center;
+
+  .content5_text {
+    padding-top: 20%;
+    padding-bottom: 20%;
+    padding-left: 10%;
+
+    @media (max-width: 625px) {
+      .font100 {
+        font-size: 80px;
+      }
+    }
+
+    @media (max-width: 370px) {
+      .font100 {
+        font-size: 60px;
+      }
+    }
+
+
+  }
+}
+
+/* 內容6 */
+.content6 {
+  width: 100%;
+  background-image: url("https://www.microsoft.com/design/fluent/assets/images/clouds.jpg");
+  background-size: cover;
+  background-position: center;
+
+  .content6_text {
+    padding: 8% 40%;
+    @media (max-width: 457px) {
+      .font100 {
+        font-size: 70px;
+      }
+    }
+
+    @media (max-width: 457px) {
+      padding: 10% 30%;
+    }
+
+  }
+
+  .big_font {
+    font-size: 100px;
+  }
+}
+
+// 內容7
+.content7 {
+  width: 100%;
+  // height: 150vh;
+  background-color: #cccccc;
+  position: relative;
+
+  .content7_content{
+    padding:10% 0 ;
+    width: 45%;
+    @media (max-width: 600px) {
+      padding:10% 10% ;
+      width: 100%;
+      margin: auto;
+    }
+
+  }
+
+  .font80{
+    font-size: 80px;
+    @media (max-width: 395px) {
+      font-size: 68px;
+    }
+  }
+
+  .fontpad {
+    padding-left: 2%;
+  }
+
+
+  .content7_imgposition {
+    position: absolute;
+    top: 20vh;
+    left: 45vw;
+    z-index: 1;
+    //讓他浮上來
+    @media (max-width: 740px) {
+      display: none;
+    }
+  }
+
+
+}
+
+// 內容8
+.content8 {
+  width: 100%;
+  height: 130vh;
+  background-image: url("../img/space.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  @media (max-width:426px) {
+    height: 80vh;
+  }
+
+
+  .content8_img1 {
+    position: absolute;
+    left: 20vw;
+    top: -10vh;
+    @media (max-width:920px) {
+      width: 300px;
+    }
+
+    @media (max-width:476px) {
+      width: 250px;
+      top: -5vh;
+    }
+  }
+
+  .content8_img2 {
+    position: absolute;
+    top: 50vh;
+    left: 5vw;
+    @media (max-width:476px) {
+      display: none;
+    }
+  }
+
+  .content8_img3 {
+    position: absolute;
+    top: -10vh;
+    left: 45vw;
+    @media (max-width:476px) {
+      display: none;
+    }
+  }
+
+  .content8_img4 {
+    position: absolute;
+    top: 70vh;
+    right: 10vw;
+    @media (max-width:476px) {
+      display: none;
+    }
+  }
+
+  .content8_img5 {
+    position: absolute;
+    top: 40vh;
+    right: 20vw;
+    @media (max-width:746px) {
+      display: none;
+    }
+  }
+}
+
+// 內容9
+.content9 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 50vw;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    background-color: black;
+  }
+
+  &::after {
+    content: "";
+    width: 50vw;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 1;
+    background-color: black;
+  }
+
+  .content9_content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    // 這再修
+    .icon {
+      display: flex;
+      // padding-left: 25%;
+      padding-top: 20%;
+      // flex: 0 0 auto;
+    }
+
+    .icon_content {
+      margin: auto;
+      display: flex;
+    }
+
+    // 1
+    .web-1 {
+      background-color: black;
+      text-align: center;
+      padding-top: 5%;
+      position: relative;
+      z-index: 2;
+      transition: 1s;
+
+      &:hover {
+        background-color: white;
+        h2,
+        p {
+          color: black;
+        }
+      }
+    }
+
+    //   2
+    .web-2 {
+      background-color: #444444;
+      text-align: center;
+      padding-top: 5%;
+      position: relative;
+      z-index: 2;
+      transition: 1s;
+
+      &:hover {
+        background-color: white;
+        h2,
+        p {
+          color: black;
+        }
+      }
+    }
+
+    // 3
+    .web-3 {
+      background-color: rgb(182, 173, 173);
+      text-align: center;
+      padding-top: 5%;
+      position: relative;
+      z-index: 2;
+      transition: 1s;
+
+      &:hover {
+        background-color: white;
+        h2,
+        p {
+          color: black;
+        }
+      }
+    }
+
+    // 4
+    .web-4 {
+      background-color: gray;
+      text-align: center;
+      padding-top: 5%;
+      position: relative;
+      z-index: 2;
+      transition: 1s;
+
+      &:hover {
+        background-color: white;
+        h2,
+        p {
+          color: black;
+        }
+      }
+    }
+
+    .mar-auto {
+      margin: auto;
+    }
+
+    .sideleft:hover .mask {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+// 內容10
+.arrowbox {
+  display: flex;
+}
+
+// footer 參考同學
+.footer {
+  width: 100%;
+  height: 48px;
+  .inner {
+    width: 1536px;
+    .logo {
+      width: 190px;
+      height: 48px;
+      .logoContainer {
+        width: 16px;
+        height: 16px;
+        .logoBox {
+          width: 7px;
+          height: 7px;
+          background-color: white;
+        }
+        .logoRed {
+          background-color: white;
+        }
+
+        &:hover {
+          .logoRed {
+            background-color: rgb(242, 80, 34);
+          }
+          .logoGreen {
+            background-color: rgb(127, 186, 0);
+          }
+          .logoBlue {
+            background-color: rgb(0, 164, 239);
+          }
+          .logoOrange {
+            background-color: rgb(255, 185, 0);
+          }
+        }
+      }
+      @media (max-width) {
+        width: 40px;
+      }
+      @media (max-width: 1024px) {
+        width: 80px;
+        flex: 0 0 auto;
+      }
+    }
+
+    .navigation {
+      height: 48px;
+      // 元素会根据自身的宽度与高度来确定尺寸，但是会伸长并吸收 flex 容器中额外的自由空间，也会缩短自身来适应 flex 容器
+      flex: 1 1 auto;
+      padding: 0 100px 0 0;
+      .navigationList {
+        width: 100%;
+        padding: 0;
+        justify-content: space-between;
+        .navigationListItem {
+          width: auto;
+          color: rgb(255, 255, 255);
+          font-size: 12px;
+          line-height: 48px;
+          font-weight: 400;
+          a {
+            position: relative;
+            color: rgb(255, 255, 255);
+            transition: all 200ms linear 0ms;
+            &::after {
+              content: "";
+              position: absolute;
+              left: 0px;
+              bottom: -6px;
+              width: 100%;
+              opacity: 0;
+              height: 1px;
+              background-color: rgb(255, 255, 255);
+              transition: all 200ms linear 0ms;
+            }
+            &:hover {
+              opacity: 0.6;
+              &::after {
+                opacity: 1;
+                bottom: -2px;
+              }
+            }
+          }
+          @media (max-width: 670px) {
+            line-height: 30px;
+            margin: 0 20px 0 0;
+          }
+        }
+        @media (max-width: 670px) {
+          justify-content: flex-start;
+          flex-wrap: wrap;
+        }
+      }
+      @media (max-width: 1024px) {
+        width: 100%;
+        height: auto;
+        flex: 1 1 auto;
+        padding: 0;
+      }
+    }
+    .social {
+      height: 48px;
+      z-index: 5;
+      a {
+        width: 48px;
+        height: 48px;
+        justify-content: flex-end;
+        svg {
+          width: 20px;
+        }
+        &:hover {
+          .linkedin path {
+            fill: rgb(0, 119, 181);
+          }
+          .dribbble path {
+            fill: rgb(234, 76, 137);
+          }
+          .twitter path {
+            fill: rgb(56, 161, 243);
+          }
+          .MicrosoftDesign path {
+            fill: rgb(0, 171, 108);
+          }
+          .facebook path {
+            fill: rgb(59, 89, 152);
+          }
+        }
+        @media (max-width: 500px) {
+          justify-content: flex-start;
+        }
+      }
+      @media (max-width: 1024px) {
+        width: 50%;
+        top: 0px;
+        justify-content: flex-end;
+        position: absolute;
+        right: 30px;
+        flex: 1 1 auto;
+        padding: 0px;
+      }
+      @media (max-width: 500px) {
+        position: relative;
+        width: 100%;
+        justify-content: flex-start;
+        right: auto;
+        left: auto;
+        top: auto;
+        margin: 16px 0px 0px;
+      }
+    }
+    @media (max-width: 1680px) {
+      width: 1336px;
+    }
+    @media (max-width: 1460px) {
+      width: 1136px;
+    }
+    @media (max-width: 1280px) {
+      width: 960px;
+    }
+    @media (max-width: 1024px) {
+      width: 100%;
+      padding: 0 30px;
+      position: relative;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 670px) {
+      padding: 10px 30px 0;
+    }
+  }
+  @media (max-width: 1024px) {
+    height: auto;
+    padding: 0 0 18px;
+  }
+  @media (max-width: 767px) {
+    display: block;
+  }
+}
